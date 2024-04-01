@@ -42,7 +42,7 @@ var canvaImage;
         return function (){
           canvasContext.clearRect(0, 0, canvasContext.canvas.width, canvasContext.canvas.height);
           //canvasContext.drawImage(canvaImage, x, y);
-         canvasContext.drawImage(canvaImage, x,y,canvaImage.width, canvaImage.height);
+         canvasContext.drawImage(canvaImage, x,y,canvaImage.width*0.2, canvaImage.height*0.2);
   
           x += 1;
           if (x > canvasContext.canvas.width) {
@@ -55,6 +55,7 @@ var canvaImage;
   });
 
   function smoothScroll(target) {
+    document.getElementById('animationCanvas').style.display = (target != 'home' && target != 'home1') ? 'none' : 'block';
     const element = document.getElementById(target);
     if (element) {
       window.scrollTo({
@@ -65,6 +66,7 @@ var canvaImage;
   }
 
   function smoothScrollMobile(target, factor) {
+    document.getElementById('animationCanvas').style.display = (target != 'home' && target != 'home1') ? 'none' : 'block';
     const element = document.getElementById(target);
     if (element) {
       window.scrollTo({
