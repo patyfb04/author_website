@@ -25,16 +25,24 @@ var canvaImage;
     });
 
       /* draw canva */
-    canvas = document.getElementById('home_image');
+    canvas = document.getElementById('animationCanvas');
     canvasContext = canvas.getContext('2d');
     canvaImage = new Image();
-    canvaImage.src = 'http://www.gravatar.com/avatar/a1f80339c0cef95be6dc73e0ac510d5d?s=32&d=identicon&r=PG';
+    canvaImage.src = '../assets/leaf.png';
+    var hRatio = canvas.width / canvaImage.width    ;
+    var vRatio = canvas.height / canvaImage.height  ;
+    var ratio  = Math.min ( hRatio, vRatio );
+
+    canvaImage.width = 100;
+    canvaImage.height = 63;
+
     canvaImage.addEventListener('load', function (){
       var interval = setInterval(function() {
         var x = 0, y = 0;
         return function (){
           canvasContext.clearRect(0, 0, canvasContext.canvas.width, canvasContext.canvas.height);
-          canvasContext.drawImage(canvaImage, x, y);
+          //canvasContext.drawImage(canvaImage, x, y);
+         canvasContext.drawImage(canvaImage, x,y,canvaImage.width, canvaImage.height);
   
           x += 1;
           if (x > canvasContext.canvas.width) {
