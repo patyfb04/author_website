@@ -150,11 +150,27 @@ html, body{
     z-index: 1;
 }
 
-.container .home .animationCanvas{
-    z-index: 2;
+.container .home .book_ad{
+     background-color: white;
+     width: 100%;
+}
+.container .home .book_ad .img{
+    width: 350px;
+    height: 500px; 
+    background: url('../assets/ad-1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
     display: inline-block;
+    margin-left: 30vh;
     position: absolute;
 }
+.container .home .book_ad .about{
+    display: inline-block;
+    width: 40%;
+    margin-left: 80vh;
+}
+
 /******************* BIO ************************/
 .container .bio{
     height: calc(100% - 80px);
@@ -381,7 +397,7 @@ html, body{
     }
   }
 
-  /********************leafs effect***************************/
+  /********************Leaf Animation CSS***************************/
 
   .falling-leaves {
     position: absolute;
