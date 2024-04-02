@@ -4,6 +4,12 @@
     font-weight: bold;
     font-style: normal;
 }
+@font-face {
+  font-family: BerkshireSwash;
+  src: url("../assets/font/BerkshireSwash-Regular.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 html, body{
     margin: 0;
@@ -72,6 +78,7 @@ html, body{
     width: 100%;
     display: block;
     background: white;
+    min-height: 1300px;
 }
 
 .container .home_bt {
@@ -122,7 +129,7 @@ html, body{
   .container .home .text .description{
     font-size: 25px;
   }
-  .container .home .text .button{
+  .container .home .text .button, .container .home .book_ad .about .button{
     margin-top: 20px;
     background: #5db6d0;
     width: 100px;
@@ -134,17 +141,17 @@ html, body{
     border-radius: 50px;
     cursor: pointer;   
   }
-  .container .home .text .button:hover{
+  .container .home .text .button:hover,.container .home .book_ad .about .button:hover{
     background: #8ad9f1;
     color: black;
   }
 
 .container .home .home_image {
     width: 100%;
-    height: 550px; 
+    height: 650px; 
     background: url('../assets/home-book.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     display: inline-block;
     z-index: 1;
@@ -153,6 +160,7 @@ html, body{
 .container .home .book_ad{
      background-color: white;
      width: 100%;
+     margin-top: 50px;
 }
 .container .home .book_ad .img{
     width: 350px;
@@ -169,14 +177,30 @@ html, body{
     display: inline-block;
     width: 40%;
     margin-left: 80vh;
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top:20px;
 }
 
+.container .home .book_ad .about .aboutbook{
+   font-size: 25px;
+   color: #5db6d0;
+}
+.container .home .book_ad .about .title{
+  font-size: 40px;
+  font-family: BerkshireSwash;
+  color: #324713;
+}
+.container .home .book_ad .about .description{
+  padding-top:10px;
+  font-size: 16px;
+}
 /******************* BIO ************************/
 .container .bio{
     height: calc(100% - 80px);
     width: 100%;
     display: block;
-    background: rgb(134, 221, 202);
+    background-color: white;
 }
 .container .bio_bt a {
     margin-left: 8px;
@@ -371,18 +395,86 @@ html, body{
         display: inline-block;
     }
     
+    .container .logo{
+      padding-left:60px;
+      width: 144px;
+    }
+
     .container .menu {
         height: auto;
+        z-index: 9999;
     }
     .menu .menu-items{
         height: auto!important;
     }
-    .container .home, .container .bio, .container .books, .container .news, .container .contact{
+    .container .home{
+      min-height: 1300px;
+    }
+
+     .container .bio, .container .books, .container .news, .container .contact{
         height: auto !important;
         min-height: 100vh;
     }
     .container a {
         padding-top: 0;
+    }
+
+    /* SECTIONS*/
+    .container .home .text{
+      padding-left: 21%;
+      margin-top: -50px;
+      width: 65%;
+    }
+    .container .home .text .welcome,  .container .home .text .description{
+      font-size: 14px;
+    }
+    .container .home .text .name{
+      font-size: 80px;
+    }
+    .container .home .text .button{
+      margin-left:20%;
+    }
+
+    .container .home .home_image{
+    width: 100%;
+    height: 325px;
+    background: url(../assets/home-book-m.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    }
+    
+    .container .home .book_ad .img{
+      display: block;
+      margin-left: 5vh;
+    }
+    .container .home .book_ad .about{
+      margin-left: 5vh;
+      position: absolute;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      padding-top: 20px;
+      margin-top: 500px;
+      width: 80%;
+    }
+
+    .container .home .book_ad .about .aboutbook{
+      font-size: 20px;
+    }
+
+    .container .home .book_ad .about .description{
+      font-size: 14px;
+    }
+
+    .container .home .book_ad .about .button{
+      margin-left: 25vw;
+    }
+
+    /* .container .home{
+      min-height: 400px;
+    } */
+    .container .bio{
+      background-color: red;
     }
   }
 

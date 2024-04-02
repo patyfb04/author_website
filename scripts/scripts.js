@@ -35,13 +35,30 @@
     }
   }
 
-  function smoothScrollMobile(target, factor) {
-    const element = document.getElementById(target);
+  function smoothScrollMobile(target) {
+   const element = document.getElementById(target);
+   const allelements = document.querySelectorAll('.menu-item a');
+   let point = 0;
+
+   for( i =0; i< allelements.length; i++){
+    let element = allelements[i];
+    let content = document.getElementById(element.id+'_content');
+    if(element.id == target){
+      break;
+    }
+    if(content){
+      point += content.getBoundingClientRect().height;
+    }
+   }
     if (element) {
+      const elementHeight = element.getBoundingClientRect().height;
+      console.log(target + '', elementHeight);
       window.scrollTo({
-        top: window.innerHeight * factor,
+        top: point,
         behavior: 'smooth'
       });
+
+      point = 0;
     }
   }
   
@@ -49,7 +66,6 @@
     const iconMenu  = document.getElementById('icon-menu');
     const iconCancel  = document.getElementById('icon-cancel');
     const menu = document.getElementById('menu');
-
     if(isActive){ // is cancel
       iconMenu.style.display ='inline-block';
       iconCancel.style.display ='none';
