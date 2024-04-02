@@ -52,12 +52,10 @@
    }
     if (element) {
       const elementHeight = element.getBoundingClientRect().height;
-      console.log(target + '', elementHeight);
       window.scrollTo({
         top: point,
         behavior: 'smooth'
       });
-
       point = 0;
     }
   }

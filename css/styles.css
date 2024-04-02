@@ -469,13 +469,6 @@ html, body{
     .container .home .book_ad .about .button{
       margin-left: 25vw;
     }
-
-    /* .container .home{
-      min-height: 400px;
-    } */
-    .container .bio{
-      background-color: red;
-    }
   }
 
   @media only screen and (min-width: 700px)  and  (max-width: 1024px){
@@ -486,6 +479,44 @@ html, body{
     }
     .icon-menu{
         margin-top: 40px;
+    }
+    .container .home .text{
+      padding-left: 10%;
+      margin-top: -50px;
+      width: 65%
+    }
+    .container .home .home_image{
+      width: 100%;
+      height: 365px;
+      background: url(../assets/home-book.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: block;
+    }
+
+    .container .home .book_ad .img{
+      width: 230px;
+      height: 360px;
+    }
+
+    .container .home .book_ad .about{
+      margin-left: 29vh;
+      position: absolute;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      padding-top: 20px;
+      width: 50%;
+      margin-top: 0;
+    }
+
+    .container .home{
+      min-height: 1000px;
+    }
+  }
+
+  @media only screen and (min-width: 800px)  and  (max-width: 1024px){
+    .container .home{
+      min-height: 1300px;
     }
   }
 
