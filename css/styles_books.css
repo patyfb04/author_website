@@ -1,0 +1,32 @@
+/******************* BOOKS ************************/
+
+.container .books{
+    height: calc(100% - 80px);
+    width: 100%;
+    display: block;
+    background: rgb(182, 139, 231);
+}
+
+.container .books_bt {
+    border-radius: 100%;
+    background: #5db6d0;
+    padding: 20px; 
+    width: 40px;
+    height: 40px;  
+    display: inline-block;
+  }
+  .container .books_bt:hover {
+    border-radius: 100%;
+    padding: 20px; 
+    width: 40px;
+    height: 40px;  
+    display: inline-block;
+    cursor: pointer;
+    background: #86d6ee;
+  }
+.container .books_bt a{
+    margin-left:-5px;
+  }
+  .container .books_bt:hover a{
+    color: black;
+  }

@@ -112,6 +112,7 @@
 .container .home .book_ad .about .aboutbook{
    font-size: 25px;
    color: #5db6d0;
+   font-weight: bold;
 }
 .container .home .book_ad .about .title{
   font-size: 40px;

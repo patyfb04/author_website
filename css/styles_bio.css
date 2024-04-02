@@ -1,0 +1,76 @@
+/******************* BIO ************************/
+.container .bio{
+    height: calc(100% - 80px);
+    width: 100%;
+    display: block;
+    background-color: white;
+}
+.container .bio_bt a {
+    margin-left: 8px;
+}
+.container .bio_bt {
+    border-radius: 100%;
+    background: #fd8e49;
+    padding: 20px; 
+    width: 40px;
+    height: 40px;  
+    display: inline-block;
+  }
+.container .bio_bt:hover {
+    border-radius: 100%;
+    padding: 20px; 
+    width: 40px;
+    height: 40px;  
+    display: inline-block;
+    cursor: pointer;
+    background: #f5a471;
+  }
+  .container .bio_bt:hover a{
+    color: black;
+  }
+
+  .container .bio .bio_box{
+     width: 100%;
+     min-height: 400px;
+     padding-top:10px;
+     margin-top: 200px;
+  }
+
+  .container .bio .bio_box .img{
+    width: 400px;
+    height: 600px; 
+    background: url('../assets/foto.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    display: inline-block;
+    margin-left: 30vh;
+    position: absolute;
+    box-shadow: 5px 5px 3px #85888d;
+  }
+
+  .container .bio .bio_box .about_author{
+    display: inline-block;
+    width: 40%;
+    margin-left: 80vh;
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top:20px;
+  }
+
+  .container .bio .bio_box .about_author .about_title{
+    font-size: 25px;
+    font-weight: bold;
+    color: #db721c;
+  }
+
+  .container .bio .bio_box .about_author .about_name{
+    font-size: 40px;
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .container .bio .bio_box .about_author .description{
+    font-size: 14px;
+    padding-top: 20px;
+  }
