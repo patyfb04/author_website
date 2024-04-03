@@ -4,6 +4,8 @@
     width: 100%;
     display: block;
     background-color: white;
+    min-height: 100vh;
+    position: relative;
 }
 .container .bio_bt a {
     margin-left: 8px;
@@ -31,9 +33,17 @@
 
   .container .bio .bio_box{
      width: 100%;
-     min-height: 400px;
-     padding-top:10px;
-     margin-top: 200px;
+     min-height: 550px;
+     margin-top:-80px;
+     background: url('../assets/bio-bg.jpg');
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     background-position: center 40px;
+     display: block;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
   }
 
   .container .bio .bio_box .img{
@@ -42,9 +52,9 @@
     background: url('../assets/foto.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-position: center;
+    background-position:center ;
     display: inline-block;
-    margin-left: 30vh;
+    margin-left: 40vh;
     position: absolute;
     box-shadow: 5px 5px 3px #85888d;
   }
@@ -52,7 +62,7 @@
   .container .bio .bio_box .about_author{
     display: inline-block;
     width: 40%;
-    margin-left: 80vh;
+    margin-left: 90vh;
     position: absolute;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-top:20px;
@@ -74,3 +84,40 @@
     font-size: 14px;
     padding-top: 20px;
   }
+
+  @media only screen and (max-width: 1024px) {
+    .container .bio .bio_box .img{
+      width: 331px;
+      height: 500px;
+      background: url(../assets/foto.jpg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+      display: inline-block;
+      margin-left: 13vh;
+      box-shadow: 5px 5px 3px #85888d;
+    }
+    .container .bio .bio_box{
+      margin-top:0px;
+    }
+    .container .bio .bio_box .img{
+      margin-left: 4vh;
+    }
+    .container .bio .bio_box .about_author{
+      margin-top:550px;
+      margin-left: 4vh;
+      width: 80%;
+    }
+    .container .bio .bio_box .about_author .description{
+      text-align: center;
+    }
+
+    .container .bio{
+      min-height: 1990px;
+    }
+  }
+
+  @media only screen and (min-width: 700px)  and  (max-width: 1024px){
+
+  }
+ 
