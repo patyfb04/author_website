@@ -10,6 +10,7 @@
     leaves.render();
 
     addHoverEffectToBooks();
+    toggleModal();
 
     /* build anchors */
     const anchors = document.querySelectorAll('a[href^="#"]');
@@ -79,7 +80,6 @@
 
   function addHoverEffectToBooks(){
    const allelements = document.querySelectorAll('.book');
-
    for( i =0; i< allelements.length; i++){
     let element = document.getElementById(allelements[i].id);
         element.addEventListener('mouseover', function(){
@@ -99,6 +99,25 @@
           button.classList.remove('overlay');
       });
    }
+  }
+
+  
+  function toggleModal(element){
+    const modal = document.querySelectorAll('.modal');
+    modal[0].style.display =  'none' ;
+    const closeBt = modal[0].querySelector('.close');
+
+    closeBt.addEventListener('click', function(event){
+      modal[0].style.display =  'none' ;
+    });
+
+    const books = document.querySelectorAll('.book');
+    books.forEach(function(book) {
+      book.addEventListener('click', function(event){
+        console.log('event=>',event.currentTarget.id);
+        modal[0].style.display =  'block' ;
+      });
+    });
   }
 
   /******************************Leaf Animation ************************************ */

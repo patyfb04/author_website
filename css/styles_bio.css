@@ -34,11 +34,11 @@
   .container .bio .bio_box{
      width: 100%;
      min-height: 550px;
-     margin-top:-80px;
+     margin-top:-100px;
      background: url('../assets/bio-bg.jpg');
      background-repeat: no-repeat;
      background-size: 100% 100%;
-     background-position: center 40px;
+     background-position: top;
      display: block;
      position: absolute;
      top: 50%;
@@ -85,6 +85,8 @@
     padding-top: 20px;
   }
 
+
+  
   @media only screen and (max-width: 1024px) {
     .container .bio .bio_box .img{
       width: 331px;

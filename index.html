@@ -19,6 +19,16 @@
   </head>
   <body>
     <div class="desktop">
+      <div class="modal">
+        <div class="box"> 
+          <div class="close" (click)="toggleModal()"><img src="/assets/cancel.svg"/></div>
+            <div class="template">
+                <div class="img"></div>
+                <div class="title"></div>
+                <div class="description"></div>
+            </div>
+        </div>
+      </div>
       <div class="container">
         <div class="topheader">
           <div class="logo">Patricia Braga</div>
@@ -136,12 +146,12 @@
             <div class="title">The Books</div>
             <div class="bookshelve">
               <div class="shelve">
-                <div class="book" id="book_tales">
+                <div class="book" id="book_tales" (click)="toggleModal('book_tales')">
                   <div class="img_tales"></div>
                   <div class="title"> Tales of the Forest - Vol 1.</div>
                   <div class="button">Learn More</div>
                 </div>
-                <div class="book" id="book_sweet">
+                <div class="book" id="book_sweet" (click)="toggleModal('book_sweet')">
                   <div class="img_sweet"></div>
                   <div class="title">Sweet Dreams, Little One!</div>
                   <div class="button">Learn More</div>
