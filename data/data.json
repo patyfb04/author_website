@@ -1,0 +1,16 @@
+ [
+        {
+            "id": "book_tales",
+            "img":"../assets/book-tales.jpg",
+            "title": "Tales of the Forest - Vol1.",
+            "description": "lalalalaalalalalaal lalalalaalalalalaal lalalalaalalalalaal\nlalalalaalalalalaal lalalalaalalalalaal lalalalaalalalalaal\nlalalalaalalalalaal lalalalaalalalalaal lalalalaalalalalaal",
+            "link": "http://www.google.com"
+        },
+        {
+            "id": "book_sweet",
+            "img":"../assets/book-sweet.jpg",
+            "title": "Sweet Dreams, Little One!",
+            "description": "\"<i>Goodbye, sunshine! <br/> Goodnight, moonlight! <br/> My bedroom fills up in blue.<br/> Soon my dreams will come true.</i>\"<br/><br/>Bedtime can be a precious time of connection for you and your little one. <br/>With whimsical art and playful rhyming verse, this picture book is perfect for bedtime snuggles. Enjoy those snuggly moments together as you read this beautiful bedtime book while your little one's dreams run freely on he/her sweet imagination!",
+            "link": "https://www.amazon.ca/Sweet-Dreams-Little-Patricia-Braga-ebook/dp/B09XZ5F8WM/ref=sr_1_8?crid=35GKN0IQ8ZREE&dib=eyJ2IjoiMSJ9.SDMhlGI-qOT3WYIfZntxcOGNm40t1HAyL358KEBjwq8TPctGtsR43KMiDGPO9Qhjr9iIy7FGc9PC45koNzzS_wMMKT0J_RuoOpVN-Hmc7DNUFZuOVdBhpDySMHYggQiemM2edDGaqmO5JrpH6GE8bCeM0SeS5JOqh6aoDGN6j3mk4gtcnLGglw85AtsJtyvRxT90cBuoPXv59GrSJeFpcjDGpdeRQfz-zGvRNq0ZFb_iG60aOZRduyHHQZPN45QS-eGHcKDRSY2bmSdPGOiXV_dsVRKioJNlv1hp8zbpmio.Io-kPFGjpMKErQsHd-onjbZYUC3697DLptYknEZIBD8&dib_tag=se&keywords=sweet+dreams+little+one&qid=1712199834&sprefix=sweet+dreams+li%2Caps%2C92&sr=8-8"
+        }
+]

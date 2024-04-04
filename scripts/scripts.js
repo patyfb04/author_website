@@ -1,3 +1,5 @@
+  var file;
+
   document.addEventListener('DOMContentLoaded', function() {
     const icon  = document.getElementById('icon-cancel');
     icon.style.display ='none';
@@ -11,6 +13,8 @@
 
     addHoverEffectToBooks();
     toggleModal();
+
+     file = readJsonFile('../data/data.json');
 
     /* build anchors */
     const anchors = document.querySelectorAll('a[href^="#"]');
@@ -114,12 +118,35 @@
     const books = document.querySelectorAll('.book');
     books.forEach(function(book) {
       book.addEventListener('click', function(event){
-        console.log('event=>',event.currentTarget.id);
+        mapModalFields(event.currentTarget.id);
         modal[0].style.display =  'block' ;
       });
     });
   }
 
+  function mapModalFields(id){
+    const books = JSON.parse(file);
+    const book = books.filter( function(data){ return data.id == id });
+    if(book) {
+       const title = document.querySelectorAll('.modal .box .template .title')[0];
+       const description = document.querySelectorAll('.modal .box .template .description')[0];
+       const img = document.querySelectorAll('.modal .box .template .img')[0];
+       const button = document.querySelectorAll('.modal .box .template .button')[0];
+       title.innerHTML = book[0].title;
+       description.innerHTML = book[0].description;
+       button.setAttribute("href", book[0].link);
+       img.style. backgroundImage = "url('"+ book[0].img +"')";
+    }
+  }
+
+  function readJsonFile(path){
+    var request = new XMLHttpRequest();
+    request.open("GET", path, false);
+    request.send(null)
+    var my_JSON_object = JSON.parse(JSON.stringify(request.responseText));
+    return my_JSON_object;
+  }
+  
   /******************************Leaf Animation ************************************ */
   var LeafScene = function(el) {
     this.viewport = el;
