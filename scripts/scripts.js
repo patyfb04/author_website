@@ -12,6 +12,7 @@
     leaves.render();
 
     addHoverEffectToBooks();
+    addHoverEffectToExtra();
     toggleModal();
 
      file = readJsonFile('../data/data.json');
@@ -104,7 +105,24 @@
       });
    }
   }
-
+  function addHoverEffectToExtra(){
+    const allelements = document.querySelectorAll('.coloring .file');
+    for( i =0; i< allelements.length; i++){
+      let element = allelements[i];
+      element.addEventListener('mouseover', function(){
+             var image = element.getElementsByTagName('div')[0];
+             image.classList.add('overlay');
+             var button = element.getElementsByTagName('div')[1];
+             button.classList.add('overlay');
+         });
+         element.addEventListener('mouseout', function(){
+           var image = element.getElementsByTagName('div')[0];
+           image.classList.remove('overlay');
+           var button = element.getElementsByTagName('div')[1];
+           button.classList.remove('overlay');
+       });
+    }
+   }
   
   function toggleModal(element){
     const modal = document.querySelectorAll('.modal');
