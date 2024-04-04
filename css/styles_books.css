@@ -35,12 +35,12 @@
     width: 100%;
   }
   .container .books .title{
-    text-align: right;
+    text-align: left;
     font-size: 25px;
     font-weight: bold;
     color: #5db6d0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-right: 25%;
+    margin-left: 25%;
   }
 
   .container .books .bookshelve{
