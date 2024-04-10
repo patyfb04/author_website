@@ -173,3 +173,107 @@
     transition: width 0.5s linear;
     transition: height 0.5s linear;
   }
+
+  .container .news .news_box .signup{
+    width: 60%;
+    min-height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: table;
+    table-layout: fixed; 
+    border-collapse: separate;
+    border-spacing: 30px;  
+    position: absolute;
+    background-color: white;
+    margin-top:350px;
+    border: 2px dashed #febf15;
+    border-radius: 15px;
+  }
+
+  .container .news .news_box .signup .title{
+    text-align: center;
+    margin-left: 0%;
+    color: black;
+  }
+  .container .news .news_box .signup .subtitle{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .container .news .news_box .signup .signup_notification{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin-top: 70px;
+    background-color: rgb(204, 225, 250);
+    width: 90%;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .container .news .news_box .signup .signup_notification.required{
+    background-color: #eb8383;
+    color:rgb(97, 19, 19);
+  }
+
+  .container .news .news_box .signup .signup_notification .close{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    float: right;
+  }
+
+  .container .news .news_box .signup .signup_notification img{
+    width: 20px;
+  }
+
+
+  .container .news .news_box .signup .form{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin-top:20px;
+  }
+  .container .news .news_box .signup .form input{
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #febf15;
+    font-size: 15px;
+    width: 400px;
+    background-color: #e0dede;
+    margin-top: 20px;
+  }
+
+  .container .news .news_box .signup .form button{
+    background: #febf15;
+    width: 120px;
+    height: 40px;
+    color:black;
+    line-height: 10px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-top: 0px;
+    border-radius: 50px;
+    cursor: pointer;   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    border: 0;
+    font-weight: bold;
+    transition: color 0.5s linear;
+    transition: background-color 0.5s ease;
+  }
+
+  .container .news .news_box .signup .form button.overlay{
+    transition: color 0.5s linear;
+    transition: background-color 0.5s ease;
+    color: white;
+    background: #fad15f;
+  }

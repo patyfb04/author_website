@@ -13,6 +13,10 @@
 
     addHoverEffectToBooks();
     addHoverEffectToExtra();
+    addDownloadFileClick();
+    addHoverEffectToContact();
+    notificationsDisplayNone();
+    addFormsNotificationClick();
     toggleModal();
 
      file = readJsonFile('../data/data.json');
@@ -105,11 +109,12 @@
       });
    }
   }
+  
   function addHoverEffectToExtra(){
     const allelements = document.querySelectorAll('.coloring .file');
     for( i =0; i< allelements.length; i++){
       let element = allelements[i];
-      element.addEventListener('mouseover', function(){
+       element.addEventListener('mouseover', function(){
              var image = element.getElementsByTagName('div')[0];
              image.classList.add('overlay');
              var button = element.getElementsByTagName('div')[1];
@@ -122,7 +127,52 @@
            button.classList.remove('overlay');
        });
     }
-   }
+
+    const signUpBt = document.querySelectorAll('.container .news .news_box .signup .form button');
+    if(signUpBt.length > 0) {
+      let element = signUpBt[0];
+      element.addEventListener('mouseover', function(){
+        element.classList.add('overlay');
+      });
+      element.addEventListener('mouseout', function(){
+        element.classList.remove('overlay');
+      });
+    }
+  }
+  
+  function addHoverEffectToContact(){
+    const bt = document.querySelectorAll('.container .contact .contact_box .contact_form .form button');
+    if(bt.length > 0) {
+      let element = bt[0];
+      element.addEventListener('mouseover', function(){
+        element.classList.add('overlay');
+      });
+      element.addEventListener('mouseout', function(){
+        element.classList.remove('overlay');
+      });
+    }
+  }
+
+  function addDownloadFileClick(){
+    const allelements = document.querySelectorAll('.coloring .file');
+    for( i =0; i< allelements.length; i++){
+      const file = allelements[i].id + ".pdf";
+      allelements[i].addEventListener('click', function(){
+        window.open("../pdf/"+ file, '_blank');
+    });
+    }
+  }
+
+  function addFormsNotificationClick(){
+    const contactFormNot = document.querySelectorAll('.contact_notification');
+    contactFormNot[0].addEventListener('click', function(){
+      closeNotification('contact_notification');
+    });
+    const signupFormNot = document.querySelectorAll('.signup_notification');
+    signupFormNot[0].addEventListener('click', function(){
+      closeNotification('signup_notification');
+    })
+  }
   
   function toggleModal(element){
     const modal = document.querySelectorAll('.modal');
@@ -165,6 +215,88 @@
     return my_JSON_object;
   }
   
+  function notificationsDisplayNone(){
+    let contact  = document.getElementById('contact_notification');
+    if(contact){
+      contact.style.display = 'none';
+    }
+    let signup  = document.getElementById('signup_notification');
+    if(signup){
+      signup.style.display = 'none';
+    }
+  }
+
+  function closeNotification(section){
+    let element  = document.getElementById(section);
+      element.style.display = 'none';
+  }
+
+/* send emails */
+
+function submitSignUp(){
+  event.preventDefault();
+  let email = document.getElementById("signup_email").value;
+  let element  = document.getElementById('signup_notification');
+  var span = element.getElementsByTagName('span')[0];
+  if (email == '') {
+    element.style.display = 'block';
+    element.classList.add('required');
+    span.innerHTML = 'There are required fields missing.';
+  } else {
+    var dataString = 'email=' + email;
+    $.ajax({
+        type: "POST",
+        url: "/php/signup.php",
+        data: dataString,
+        cache: false,
+        success: function(html) {
+           element.style.display = 'block';
+           element.classList.remove('required');
+           span.innerHTML = 'Your subscription was sent successfully!';
+        },
+        error: function(error){
+          element.style.display = 'block';
+          element.classList.add('required');
+          span.innerHTML = 'Error: your subscription was not sent.';
+        }
+      });
+  }
+}
+
+function submitContactForm(event){
+  event.preventDefault();
+
+  let name = document.getElementById("contact_name").value;
+  let email = document.getElementById("contact_email").value;
+  let message = document.getElementById("contact_message").value;
+  let element  = document.getElementById('contact_notification');
+  var span = element.getElementsByTagName('span')[0];
+
+  if (name == '' || email == '' || message == '') {
+      element.style.display = 'block';
+      element.classList.add('required');
+      span.innerHTML = 'There are required fields missing.';
+    } else {
+      var dataString = 'name=' + name + '&email=' + email + '&message=' + message ;
+      $.ajax({
+          type: "POST",
+          url: "/php/contact.php",
+          data: dataString,
+          cache: false,
+          success: function(html) {
+             element.style.display = 'block';
+             element.classList.remove('required');
+             span.innerHTML = 'Your message was sent successfully!';
+          },
+          error: function(error){
+            element.style.display = 'block';
+            element.classList.add('required');
+            span.innerHTML = 'Error: your message was not sent.';
+          }
+        });
+      }
+}
+
   /******************************Leaf Animation ************************************ */
   var LeafScene = function(el) {
     this.viewport = el;

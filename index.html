@@ -16,6 +16,7 @@
       language="JavaScript"
       type="text/javascript"
     ></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
   <body>
     <div class="desktop">
@@ -165,7 +166,7 @@
             <div class="news_box">
               <div class="coloring_title">Coloring-In</div>
               <div class="coloring">
-                  <div class="file" id="coloring-1">
+                  <div class="file" id="coloring-2">
                     <div class="img1"></div>
                     <div class="button">Download</div>
                   </div>
@@ -179,11 +180,49 @@
                   </div>
               </div>
               <div class="signup">
-                sign up
+                  <div class="title">
+                    Follow my Adventures
+                  </div>
+                  <div class="subtitle">
+                    Sign up to hear about the latest and upcoming books, deals and exclusive content.
+                  </div>
+                  <div class="form">
+                      <form id="signup_form">
+                        <input type="text" placeholder="email" id="signup_email">
+                        <button onclick="submitSignUp(event)"> Subscribe</button>
+                      </form>
+                  </div>
+                  <div class="signup_notification" id="signup_notification">
+                    <div (click)="closeNotification('signup_notification')" class="close"><img src="/assets/cancel.svg"/></div>
+                    <span>Your subscription was sent successfully!</span>
+                  </div>
               </div>
             </div>
           </div>
-          <div class="contact" id="contact">some content books</div>
+          <div class="contact" id="contact">
+            <div class="contact_box">
+              <div class="contact_form">
+                <div class="title">
+                  GET IN TOUCH
+                </div>
+                <div class="subtitle">
+                  I would love to hear from you, please send me a message!
+                </div>
+                <div class="form">
+                    <form id="contact_form">
+                      <label for="name">Name:</label><input type="text" placeholder="name" id="contact_name">
+                      <label for="email">Email:</label><input type="text" placeholder="email" id="contact_email">
+                      <label for="message">Message:</label><textarea id="contact_message"></textarea>
+                      <button onclick="submitContactForm(event)"> Submit</button>
+                    </form>
+                </div>
+                <div class="contact_notification" id="contact_notification">
+                  <div (click)="closeNotification('contact_notification')" class="close"><img src="/assets/cancel.svg"/></div>
+                  <span>Your message was sent successfully!</span>
+                </div>
+              </div>
+          </div>
+          </div>
         </div>
       </div>
     </div>

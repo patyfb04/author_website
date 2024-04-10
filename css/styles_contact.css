@@ -4,7 +4,8 @@
     height: calc(100% - 80px);
     width: 100%;
     display: block;
-    background: rgb(236, 126, 148);
+    background:white;
+    position: relative;
 }
 
 .container .contact_bt {
@@ -29,4 +30,135 @@
   }
   .container .contact_bt:hover a{
     color: black;
+  }
+
+  .container .contact .contact_box{
+    width: 100%;
+    min-height: 550px;
+    margin-top:-100px;
+    background: url('../assets/contact-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container .contact .contact_box .contact_form{
+    width: 600px;
+    height: 400px;
+    padding: 20px;
+    border: 2px dashed rgb(255, 123, 189);
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container .contact .contact_box .contact_form .title{
+    font-size:30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+
+  .container .contact .contact_box .contact_form .subtitle{
+    font-size:16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+
+  .container .contact .contact_box .contact_form .contact_notification{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin-top: 180px;
+    background-color: rgb(204, 225, 250);
+    width: 90%;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .container .contact .contact_box .contact_form .contact_notification.required{
+    background-color: #eb8383;
+    color:rgb(97, 19, 19);
+  }
+
+  .container .contact .contact_box .contact_form .contact_notification .close{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    float: right;
+  }
+
+  .container .contact .contact_box .contact_form .contact_notification img{
+    width: 20px;
+  }
+
+  .container .contact .contact_box .contact_form .form{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding-top: 30px;
+  }
+
+  .container .contact .contact_box .contact_form .form input,
+  .container .contact .contact_box .contact_form .form textarea{
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 123, 189);
+    font-size: 15px;
+    width: 400px;
+    background-color: #e0dede;
+    margin-bottom: 10px;
+  }
+
+  .container .contact .contact_box .contact_form .form label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  
+  .container .contact .contact_box .contact_form .form button{
+    background: rgb(255, 123, 189);
+    width: 120px;
+    height: 40px;
+    color:black;
+    line-height: 10px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-top: 0px;
+    border-radius: 50px;
+    cursor: pointer;   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    border: 0;
+    font-weight: bold;
+    transition: color 0.5s linear;
+    transition: background-color 0.5s ease;
+    width: 100%;
+  }
+
+  .container .contact .contact_box .contact_form .form button.overlay{
+    transition: color 0.5s linear;
+    transition: background-color 0.5s ease;
+    color: white;
+    background: rgb(253, 164, 209);
   }
