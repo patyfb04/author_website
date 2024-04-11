@@ -162,3 +162,21 @@
     color: white;
     background: rgb(253, 164, 209);
   }
+
+  @media only screen and (max-width: 700px){
+
+    .container .contact .contact_box .contact_form,
+    .container .contact .contact_box .contact_form .form input,
+    .container .contact .contact_box .contact_form .form textarea{
+      width: 300px;
+    }
+
+    .container .contact .contact_box{
+      margin-top: -150px;
+    }
+
+  }
+  
+  @media only screen and (min-width: 700px)  and  (max-width: 1024px){
+
+  }

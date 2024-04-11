@@ -20,14 +20,16 @@
   <body>
     <div class="desktop">
       <div class="modal">
-        <div class="box"> 
-          <div class="close" (click)="toggleModal()"><img src="/assets/cancel.svg"/></div>
-            <div class="template">
-                <div class="img"></div>
-                <div class="title"></div>
-                <div class="description"></div>
-                <a class="button" target="_blank">Buy at Amazon</a>
-            </div>
+        <div class="box">
+          <div class="close" (click)="toggleModal()">
+            <img src="/assets/cancel.svg" />
+          </div>
+          <div class="template">
+            <div class="img"></div>
+            <div class="title"></div>
+            <div class="description"></div>
+            <a class="button" target="_blank">Buy at Amazon</a>
+          </div>
         </div>
       </div>
       <div class="container">
@@ -79,7 +81,7 @@
                   lalalalaalalalalaal lalalalaalalalalaal lalalalaalalalalaal
                   lalalalaalalalalaal lalalalaalalalalaal lalalalaalalalalaal
                 </div>
-                <div class="button" >Learn More</div>
+                <div class="button">Learn More</div>
               </div>
             </div>
           </div>
@@ -147,12 +149,20 @@
             <div class="title">Published Books</div>
             <div class="bookshelve">
               <div class="shelve">
-                <div class="book" id="book_tales" (click)="toggleModal('book_tales')">
+                <div
+                  class="book"
+                  id="book_tales"
+                  (click)="toggleModal('book_tales')"
+                >
                   <div class="img_tales"></div>
-                  <div class="title"> Tales of the Forest - Vol 1.</div>
+                  <div class="title">Tales of the Forest - Vol 1.</div>
                   <div class="button">Learn More</div>
                 </div>
-                <div class="book" id="book_sweet" (click)="toggleModal('book_sweet')">
+                <div
+                  class="book"
+                  id="book_sweet"
+                  (click)="toggleModal('book_sweet')"
+                >
                   <div class="img_sweet"></div>
                   <div class="title">Sweet Dreams, Little One!</div>
                   <div class="button">Learn More</div>
@@ -165,76 +175,92 @@
             <div class="news_box">
               <div class="coloring_title">Coloring-In</div>
               <div class="coloring">
-                  <div class="file" id="coloring-2">
-                    <div class="img1"></div>
-                    <div class="button">Download</div>
-                  </div>
-                  <div class="file" id="coloring-2">
-                    <div class="img2"></div>
-                    <div class="button">Download</div>
-                  </div>
-                  <div class="file" id="coloring-3">
-                    <div class="img3"></div>
-                    <div class="button">Download</div>
-                  </div>
+                <div class="file" id="coloring-2">
+                  <div class="img1"></div>
+                  <div class="button">Download</div>
+                </div>
+                <div class="file" id="coloring-2">
+                  <div class="img2"></div>
+                  <div class="button">Download</div>
+                </div>
+                <div class="file" id="coloring-3">
+                  <div class="img3"></div>
+                  <div class="button">Download</div>
+                </div>
               </div>
               <div class="signup">
-                  <div class="title">
-                    Follow my Adventures
+                <div class="title">Follow my Adventures</div>
+                <div class="subtitle">
+                  Sign up to hear about the latest and upcoming books, deals and
+                  exclusive content.
+                </div>
+                <div class="form">
+                  <form id="signup_form">
+                    <input type="text" placeholder="email" id="signup_email" />
+                    <button onclick="submitSignUp(event)">Subscribe</button>
+                  </form>
+                </div>
+                <div class="signup_notification" id="signup_notification">
+                  <div
+                    (click)="closeNotification('signup_notification')"
+                    class="close"
+                  >
+                    <img src="/assets/cancel.svg" />
                   </div>
-                  <div class="subtitle">
-                    Sign up to hear about the latest and upcoming books, deals and exclusive content.
-                  </div>
-                  <div class="form">
-                      <form id="signup_form">
-                        <input type="text" placeholder="email" id="signup_email">
-                        <button onclick="submitSignUp(event)"> Subscribe</button>
-                      </form>
-                  </div>
-                  <div class="signup_notification" id="signup_notification">
-                    <div (click)="closeNotification('signup_notification')" class="close"><img src="/assets/cancel.svg"/></div>
-                    <span>Your subscription was sent successfully!</span>
-                  </div>
+                  <span>Your subscription was sent successfully!</span>
+                </div>
               </div>
             </div>
           </div>
           <div class="contact" id="contact">
             <div class="contact_box">
               <div class="contact_form">
-                <div class="title">
-                  GET IN TOUCH
-                </div>
+                <div class="title">GET IN TOUCH</div>
                 <div class="subtitle">
                   I would love to hear from you, please send me a message!
                 </div>
                 <div class="form">
-                    <form id="contact_form">
-                      <label for="name">Name:</label><input type="text" placeholder="name" id="contact_name">
-                      <label for="email">Email:</label><input type="text" placeholder="email" id="contact_email">
-                      <label for="message">Message:</label><textarea id="contact_message"></textarea>
-                      <button onclick="submitContactForm(event)"> Submit</button>
-                    </form>
+                  <form id="contact_form">
+                    <label for="name">Name:</label
+                    ><input type="text" placeholder="name" id="contact_name" />
+                    <label for="email">Email:</label
+                    ><input
+                      type="text"
+                      placeholder="email"
+                      id="contact_email"
+                    />
+                    <label for="message">Message:</label
+                    ><textarea id="contact_message"></textarea>
+                    <button onclick="submitContactForm(event)">Submit</button>
+                  </form>
                 </div>
                 <div class="contact_notification" id="contact_notification">
-                  <div (click)="closeNotification('contact_notification')" class="close"><img src="/assets/cancel.svg"/></div>
+                  <div
+                    (click)="closeNotification('contact_notification')"
+                    class="close"
+                  >
+                    <img src="/assets/cancel.svg" />
+                  </div>
                   <span>Your message was sent successfully!</span>
                 </div>
               </div>
-          </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="mobile">
       <div class="modal">
-        <div class="box"> 
-          <div class="close" (click)="toggleModalMobile()"><img src="/assets/cancel.svg"/></div>
-            <div class="template">
-                <div class="img"></div>
-                <div class="title"></div>
-                <div class="description"></div>
-                <a class="button" target="_blank">Buy at Amazon</a>
-            </div>
+        <div class="box">
+          <div class="close" (click)="toggleModalMobile()">
+            <img src="/assets/cancel.svg" />
+          </div>
+          <div class="template">
+            <div class="img"></div>
+            <div class="title"></div>
+            <div class="description"></div>
+            <a class="button" target="_blank">Buy at Amazon</a>
+          </div>
         </div>
       </div>
       <div class="container">
@@ -365,12 +391,20 @@
             <div class="title">Published Books</div>
             <div class="bookshelve">
               <div class="shelve">
-                <div class="book" id="book_tales1" (click)="toggleModalMobile('book_tales1')">
+                <div
+                  class="book"
+                  id="book_tales1"
+                  (click)="toggleModalMobile('book_tales1')"
+                >
                   <div class="img_tales"></div>
-                  <div class="title"> Tales of the Forest - Vol 1.</div>
+                  <div class="title">Tales of the Forest - Vol 1.</div>
                   <div class="button">Learn More</div>
                 </div>
-                <div class="book" id="book_sweet1" (click)="toggleModalMobile('book_sweet1')">
+                <div
+                  class="book"
+                  id="book_sweet1"
+                  (click)="toggleModalMobile('book_sweet1')"
+                >
                   <div class="img_sweet"></div>
                   <div class="title">Sweet Dreams, Little One!</div>
                   <div class="button">Learn More</div>
@@ -383,41 +417,68 @@
             <div class="news_box">
               <div class="coloring_title">Coloring-In</div>
               <div class="coloring">
-                  <div class="file" id="coloring-1">
-                    <div class="img1"></div>
-                    <div class="button">Download</div>
-                  </div>
-                  <div class="file" id="coloring-2">
-                    <div class="img2"></div>
-                    <div class="button">Download</div>
-                  </div>
-                  <div class="file" id="coloring-3">
-                    <div class="img3"></div>
-                    <div class="button">Download</div>
-                  </div>
+                <div class="file" id="coloring-1">
+                  <div class="img1"></div>
+                  <div class="button">Download</div>
+                </div>
+                <div class="file" id="coloring-2">
+                  <div class="img2"></div>
+                  <div class="button">Download</div>
+                </div>
+                <div class="file" id="coloring-3">
+                  <div class="img3"></div>
+                  <div class="button">Download</div>
+                </div>
               </div>
               <div class="signup">
-                  <div class="title">
-                    Follow my Adventures
+                <div class="title">Follow my Adventures</div>
+                <div class="subtitle">
+                  Sign up to hear about the latest and upcoming books, deals and
+                  exclusive content.
+                </div>
+                <div class="form">
+                  <form id="signup_form1">
+                    <input type="text" placeholder="email" id="signup_email1" />
+                    <button onclick="submitSignUp(event)">Subscribe</button>
+                  </form>
+                </div>
+                <div class="signup_notification" id="signup_notification1">
+                  <div
+                    (click)="closeNotification('signup_notification1')"
+                    class="close"
+                  >
+                    <img src="/assets/cancel.svg" />
                   </div>
-                  <div class="subtitle">
-                    Sign up to hear about the latest and upcoming books, deals and exclusive content.
-                  </div>
-                  <div class="form">
-                      <form id="signup_form1">
-                        <input type="text" placeholder="email" id="signup_email1">
-                        <button onclick="submitSignUp(event)"> Subscribe</button>
-                      </form>
-                  </div>
-                  <div class="signup_notification" id="signup_notification1">
-                    <div (click)="closeNotification('signup_notification1')" class="close"><img src="/assets/cancel.svg"/></div>
-                    <span>Your subscription was sent successfully!</span>
-                  </div>
+                  <span>Your subscription was sent successfully!</span>
+                </div>
               </div>
             </div>
+          </div>
+          <div class="contact" id="contact1_content">
+            <div class="contact_box">
+              <div class="contact_form">
+                <div class="title">
+                  GET IN TOUCH
+                </div>
+                <div class="subtitle">
+                  I would love to hear from you, please send me a message!
+                </div>
+                <div class="form">
+                    <form id="contact_form1">
+                      <label for="name1">Name:</label><input type="text" placeholder="name" id="contact_name1">
+                      <label for="email2">Email:</label><input type="text" placeholder="email" id="contact_email1">
+                      <label for="message3">Message:</label><textarea id="contact_message1"></textarea>
+                      <button onclick="submitContactForm(event)"> Submit</button>
+                    </form>
+                </div>
+                <div class="contact_notification" id="contact_notification1">
+                  <div (click)="closeNotification('contact_notification1')" class="close"><img src="/assets/cancel.svg"/></div>
+                  <span>Your message was sent successfully!</span>
+                </div>
+              </div>
+          </div>
 
           </div>
-          <div class="contact" id="contact1_content">content contact</div>
         </div>
       </div>
     </div>

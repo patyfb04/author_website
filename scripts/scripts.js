@@ -171,7 +171,7 @@
   }
 
   function addFormsNotificationClick(isMobile){
-     let notification = isMobile ? '#contact_notification' : '#contact_notification';
+     let notification = isMobile ? '#contact_notification1' : '#contact_notification';
      let signupNotification = isMobile ? '#signup_notification1': '#signup_notification';
 
     const contactFormNot = document.querySelectorAll(notification);
@@ -318,11 +318,16 @@ function submitSignUp(){
 
 function submitContactForm(event){
   event.preventDefault();
+  const isMobile = (window.innerWidth <= 1024);
+  let nameField = isMobile ? "contact_name1" : "contact_name";
+  let emailField = isMobile ? "contact_email1" : "contact_email";
+  let messageField = isMobile ? "contact_message1" : "contact_message"; 
+  let notification = isMobile ? "contact_notification1" : "contact_notification";
 
-  let name = document.getElementById("contact_name").value;
-  let email = document.getElementById("contact_email").value;
-  let message = document.getElementById("contact_message").value;
-  let element  = document.getElementById('contact_notification');
+  let name = document.getElementById(nameField).value;
+  let email = document.getElementById(emailField).value;
+  let message = document.getElementById(messageField).value;
+  let element  = document.getElementById(notification);
   var span = element.getElementsByTagName('span')[0];
 
   if (name == '' || email == '' || message == '') {
