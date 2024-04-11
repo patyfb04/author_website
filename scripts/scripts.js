@@ -11,13 +11,19 @@
     leaves.init();
     leaves.render();
 
+    const isMobile = (window.innerWidth <= 1024);
+
     addHoverEffectToBooks();
     addHoverEffectToExtra();
     addDownloadFileClick();
     addHoverEffectToContact();
     notificationsDisplayNone();
     addFormsNotificationClick();
-    toggleModal();
+    if(!isMobile){
+      toggleModal();
+    } else{
+      toggleModalMobile();
+    }
 
      file = readJsonFile('../data/data.json');
 
@@ -27,7 +33,6 @@
       anchor.addEventListener('click', function(event) {
         event.preventDefault();
         const target = anchor.getAttribute('href').substring(1);
-        const isMobile = (window.innerWidth <= 1024);
         if(!isMobile){
           smoothScroll(target);
         } else {
@@ -175,7 +180,7 @@
   }
   
   function toggleModal(element){
-    const modal = document.querySelectorAll('.modal');
+    const modal = document.querySelectorAll('.desktop .modal');
     modal[0].style.display =  'none' ;
     const closeBt = modal[0].querySelector('.close');
 
@@ -192,6 +197,25 @@
     });
   }
 
+  function toggleModalMobile(element){
+    const modal = document.querySelectorAll('.mobile .modal');
+    modal[0].style.display =  'none' ;
+    const closeBt = modal[0].querySelector('.close');
+
+    closeBt.addEventListener('click', function(event){
+      modal[0].style.display =  'none' ;
+    });
+
+    const books = document.querySelectorAll('#books1_content .book');
+    books.forEach(function(book) {
+      book.addEventListener('click', function(event){
+        mapModalFieldsMobile(event.currentTarget.id.replace('1',''));
+        modal[0].style.display =  'block' ;
+      });
+    });
+  }
+
+
   function mapModalFields(id){
     const books = JSON.parse(file);
     const book = books.filter( function(data){ return data.id == id });
@@ -200,6 +224,21 @@
        const description = document.querySelectorAll('.modal .box .template .description')[0];
        const img = document.querySelectorAll('.modal .box .template .img')[0];
        const button = document.querySelectorAll('.modal .box .template .button')[0];
+       title.innerHTML = book[0].title;
+       description.innerHTML = book[0].description;
+       button.setAttribute("href", book[0].link);
+       img.style. backgroundImage = "url('"+ book[0].img +"')";
+    }
+  }
+
+  function mapModalFieldsMobile(id){
+    const books = JSON.parse(file);
+    const book = books.filter( function(data){ return data.id == id });
+    if(book) {
+       const title = document.querySelectorAll('.mobile .modal .box .template .title')[0];
+       const description = document.querySelectorAll('.mobile .modal .box .template .description')[0];
+       const img = document.querySelectorAll('.mobile .modal .box .template .img')[0];
+       const button = document.querySelectorAll('.mobile .modal .box .template .button')[0];
        title.innerHTML = book[0].title;
        description.innerHTML = book[0].description;
        button.setAttribute("href", book[0].link);

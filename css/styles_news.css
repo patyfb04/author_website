@@ -209,7 +209,7 @@
     position: absolute;
     margin-top: 70px;
     background-color: rgb(204, 225, 250);
-    width: 90%;
+    width: 50%;
     padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 13px;
@@ -246,7 +246,7 @@
     border-radius: 5px;
     border: 1px solid #febf15;
     font-size: 15px;
-    width: 400px;
+    width: 440px;
     background-color: #e0dede;
     margin-top: 20px;
   }

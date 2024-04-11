@@ -250,12 +250,78 @@
   color: black;
 }
 
-/******************************************************************/
-  @media only screen and (max-width: 1024px){
+@media only screen and (max-width: 700px){
     .container .books{
+      /* background-color: blue; */
+      min-height: 1300px;
     }
+
+    .container .books .bookshelve .shelve{
+      margin-top: 350px;
+    }
+
+    .container .books .bookshelve .shelve .book{
+      height: 550px;
+      display: table-row;
+    }
+
+ /******************************* MODAL MOBILE***************************/
+  .modal .box{
+    width: 80%;
+    height: 70%;
+    padding: 10px;
+  }
+ .modal .box .template {
+  width: 100%;
+ }
+
+  .modal .box .template .img {
+    width: 260px;
+    height: 350px;
+    position: absolute;
+    margin-top: -140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .modal .box .template .title{
+    margin-top:380px;
+    font-size: 20px;
+    margin-left: 0;
   }
 
-  @media only screen and (min-width: 700px)  and  (max-width: 1024px){
+  .modal .box .template .description{
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:black;
+    text-align: center;
+    margin-left:0px;
+    width: 100%;
+    margin-top: 40px;
+  }
 
+  .modal .box .template .button{
+    margin-top: 280px;
+  }
+}
+
+  @media only screen and (min-width: 700px)  and  (max-width: 1024px){
+    .container .books{
+      /* background-color: blue; */
+      min-height: 1300px;
+    }
+
+    .container .books .bookshelve .shelve{
+      margin-top: 350px;
+    }
+
+    .container .books .bookshelve .shelve .book{
+      height: 550px;
+      display: table-row;
+    }
+
+    .container .books .title{
+      margin-left: 25vh;
+      font-size: 30px;
+    }
   }

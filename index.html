@@ -227,6 +227,17 @@
       </div>
     </div>
     <div class="mobile">
+      <div class="modal">
+        <div class="box"> 
+          <div class="close" (click)="toggleModalMobile()"><img src="/assets/cancel.svg"/></div>
+            <div class="template">
+                <div class="img"></div>
+                <div class="title"></div>
+                <div class="description"></div>
+                <a class="button" target="_blank">Buy at Amazon</a>
+            </div>
+        </div>
+      </div>
       <div class="container">
         <div class="topheader">
           <div class="logo">Patricia Braga</div>
@@ -351,8 +362,24 @@
               </div>
             </div>
           </div>
-          <div class="books" id="books1_content">content books</div>
-          <div class="news" id="news1_content">content news</div>
+          <div class="books" id="books1_content">
+            <div class="title">Published Books</div>
+            <div class="bookshelve">
+              <div class="shelve">
+                <div class="book" id="book_tales1" (click)="toggleModalMobile('book_tales1')">
+                  <div class="img_tales"></div>
+                  <div class="title"> Tales of the Forest - Vol 1.</div>
+                  <div class="button">Learn More</div>
+                </div>
+                <div class="book" id="book_sweet1" (click)="toggleModalMobile('book_sweet1')">
+                  <div class="img_sweet"></div>
+                  <div class="title">Sweet Dreams, Little One!</div>
+                  <div class="button">Learn More</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news" id="news1_content">content extra</div>
           <div class="contact" id="contact1_content">content contact</div>
         </div>
       </div>
