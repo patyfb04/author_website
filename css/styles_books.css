@@ -324,4 +324,43 @@
       margin-left: 25vh;
       font-size: 30px;
     }
+      /******************************* MODAL MOBILE***************************/
+      .modal .box{
+        width: 80%;
+        height: 70%;
+        padding: 10px;
+      }
+     .modal .box .template {
+      width: 100%;
+     }
+    
+      .modal .box .template .img {
+        width: 260px;
+        height: 350px;
+        position: absolute;
+        margin-top: -140px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .modal .box .template .title{
+        margin-top:420px;
+        font-size: 25px;
+        margin-left: 0;
+      }
+    
+      .modal .box .template .description{
+        font-size: 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color:black;
+        text-align: center;
+        margin-left:0px;
+        width: 100%;
+        margin-top: 40px;
+      }
+    
+      .modal .box .template .button{
+        margin-top: 280px;
+      }
+      
   }

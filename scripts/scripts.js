@@ -240,7 +240,7 @@
        const img = document.querySelectorAll('.mobile .modal .box .template .img')[0];
        const button = document.querySelectorAll('.mobile .modal .box .template .button')[0];
        title.innerHTML = book[0].title;
-       description.innerHTML = book[0].description;
+       description.innerHTML = book[0].short_description;
        button.setAttribute("href", book[0].link);
        img.style. backgroundImage = "url('"+ book[0].img +"')";
     }
