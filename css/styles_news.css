@@ -277,3 +277,139 @@
     color: white;
     background: #fad15f;
   }
+
+  @media only screen and (max-width: 700px){
+    .container .news{
+      min-height: 1800px;
+    }
+
+    .container .news .news_box{
+      margin-top:-550px;
+    }
+    .container .news .news_box .coloring_title{
+      margin-top:-35px;
+    }
+
+    .container .news .news_box .coloring .file{
+      display: table-row;
+    }
+
+    .container .news .news_box .coloring .file .img1 {
+      margin-top:0px;
+    }
+    .container .news .news_box .coloring .file .img2 {
+      margin-top:260px;
+    }
+    .container .news .news_box .coloring .file .img3{
+      margin-top:520px;
+    }
+
+    .container .news .news_box .signup{
+      margin-top:1100px;
+      width: 90%;
+      min-height: 400px;
+    }
+
+    .container .news .news_box .signup .subtitle{
+      margin-top: 10px;
+    }
+
+    .container .news .news_box .signup .form input{
+      width: 260px;
+      margin-top: 30px;
+    }
+
+    .container .news .news_box .signup .form button{
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .container .news .news_box .signup .signup_notification{
+      margin-top:120px;
+      width: 80%;
+    }
+
+     #coloring-1 .button{
+      margin-top:190px;
+    }
+
+    #coloring-2 .button{
+      margin-top:450px;
+    }
+
+    #coloring-3 .button{
+      margin-top:710px;
+    }
+  }
+
+  @media only screen and (min-width: 700px)  and  (max-width: 1024px){
+    .container .news{
+      min-height: 1800px;
+    }
+
+    .container .news .news_box{
+      margin-top:-550px;
+    }
+    .container .news .news_box .coloring_title{
+      margin-top:-25px;
+      font-size: 25px;
+    }
+
+    .container .news .news_box .coloring .file{
+      display: table-row;
+    }
+
+    .container .news .news_box .coloring .file .img1 {
+      margin-top:30px;
+    }
+    .container .news .news_box .coloring .file .img2 {
+      margin-top:300px;
+    }
+    .container .news .news_box .coloring .file .img3{
+      margin-top:560px;
+    }
+
+    .container .news .news_box .signup{
+      margin-top:1150px;
+      width: 90%;
+      min-height: 400px;
+    }
+
+    .container .news .news_box .signup .subtitle{
+      margin-top: 10px;
+    }
+
+    .container .news .news_box .signup .form input{
+      width: 460px;
+      margin-top: -60px;
+    }
+
+    .container .news .news_box .signup .form button{
+      margin-top: 0px;
+      width: 100%;
+    }
+
+    .container .news .news_box .signup .signup_notification{
+      margin-top:80px;
+      width: 80%;
+    }
+
+     #coloring-1 .button{
+      margin-top:220px;
+    }
+
+    #coloring-2 .button{
+      margin-top:490px;
+    }
+
+    #coloring-3 .button{
+      margin-top:760px;
+    }
+
+    .container .news .title{
+      font-size: 30px;
+      text-align: center;
+      margin-left: 0;
+    }
+
+  }

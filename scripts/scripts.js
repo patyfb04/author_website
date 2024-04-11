@@ -17,8 +17,9 @@
     addHoverEffectToExtra();
     addDownloadFileClick();
     addHoverEffectToContact();
-    notificationsDisplayNone();
-    addFormsNotificationClick();
+    notificationsDisplayNone(isMobile);
+    addFormsNotificationClick(isMobile);
+
     if(!isMobile){
       toggleModal();
     } else{
@@ -42,6 +43,7 @@
     });
   });
 
+  
   function smoothScroll(target) {
     const element = document.getElementById(target);
     if (element) {
@@ -168,15 +170,23 @@
     }
   }
 
-  function addFormsNotificationClick(){
-    const contactFormNot = document.querySelectorAll('.contact_notification');
-    contactFormNot[0].addEventListener('click', function(){
-      closeNotification('contact_notification');
-    });
-    const signupFormNot = document.querySelectorAll('.signup_notification');
-    signupFormNot[0].addEventListener('click', function(){
-      closeNotification('signup_notification');
-    })
+  function addFormsNotificationClick(isMobile){
+     let notification = isMobile ? '#contact_notification' : '#contact_notification';
+     let signupNotification = isMobile ? '#signup_notification1': '#signup_notification';
+
+    const contactFormNot = document.querySelectorAll(notification);
+    if(contactFormNot.length > 0){
+      contactFormNot[0].addEventListener('click', function(){
+        closeNotification(contactFormNot[0]);
+      });
+    }
+
+    const signupFormNot = document.querySelectorAll(signupNotification);
+    if(signupFormNot.length > 0){
+      signupFormNot[0].addEventListener('click', function(){
+        closeNotification( signupFormNot[0]);
+      })
+    }
   }
   
   function toggleModal(element){
@@ -254,19 +264,18 @@
     return my_JSON_object;
   }
   
-  function notificationsDisplayNone(){
-    let contact  = document.getElementById('contact_notification');
+  function notificationsDisplayNone(isMobile){
+    let contact  = document.getElementById(isMobile ? 'contact_notification1' : 'contact_notification');
     if(contact){
       contact.style.display = 'none';
     }
-    let signup  = document.getElementById('signup_notification');
+    let signup  = document.getElementById(isMobile ? 'signup_notification1': 'signup_notification');
     if(signup){
       signup.style.display = 'none';
     }
   }
 
-  function closeNotification(section){
-    let element  = document.getElementById(section);
+  function closeNotification(element){
       element.style.display = 'none';
   }
 
@@ -274,10 +283,15 @@
 
 function submitSignUp(){
   event.preventDefault();
-  let email = document.getElementById("signup_email").value;
-  let element  = document.getElementById('signup_notification');
+  const isMobile = (window.innerWidth <= 1024);
+
+  let input = isMobile ? "signup_email1" : "signup_email";
+  let notification = isMobile ? "signup_notification1" : "signup_notification";
+  let email = document.getElementById(input).value;
+  let element  = document.getElementById(notification);
   var span = element.getElementsByTagName('span')[0];
-  if (email == '') {
+
+  if (email.trim() == '') {
     element.style.display = 'block';
     element.classList.add('required');
     span.innerHTML = 'There are required fields missing.';

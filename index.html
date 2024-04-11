@@ -378,7 +378,45 @@
               </div>
             </div>
           </div>
-          <div class="news" id="news1_content">content extra</div>
+          <div class="news" id="news1_content">
+            <div class="title">Extra & News</div>
+            <div class="news_box">
+              <div class="coloring_title">Coloring-In</div>
+              <div class="coloring">
+                  <div class="file" id="coloring-1">
+                    <div class="img1"></div>
+                    <div class="button">Download</div>
+                  </div>
+                  <div class="file" id="coloring-2">
+                    <div class="img2"></div>
+                    <div class="button">Download</div>
+                  </div>
+                  <div class="file" id="coloring-3">
+                    <div class="img3"></div>
+                    <div class="button">Download</div>
+                  </div>
+              </div>
+              <div class="signup">
+                  <div class="title">
+                    Follow my Adventures
+                  </div>
+                  <div class="subtitle">
+                    Sign up to hear about the latest and upcoming books, deals and exclusive content.
+                  </div>
+                  <div class="form">
+                      <form id="signup_form1">
+                        <input type="text" placeholder="email" id="signup_email1">
+                        <button onclick="submitSignUp(event)"> Subscribe</button>
+                      </form>
+                  </div>
+                  <div class="signup_notification" id="signup_notification1">
+                    <div (click)="closeNotification('signup_notification1')" class="close"><img src="/assets/cancel.svg"/></div>
+                    <span>Your subscription was sent successfully!</span>
+                  </div>
+              </div>
+            </div>
+
+          </div>
           <div class="contact" id="contact1_content">content contact</div>
         </div>
       </div>
