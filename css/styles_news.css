@@ -86,7 +86,7 @@
   .container .news .news_box .coloring .file .img1{
     width: 280px;
     height:300px;
-    background: url('../assets/news-bg.jpg');
+    background: url('../assets/coloring-1.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -103,7 +103,7 @@
   .container .news .news_box .coloring .file .img2{
     width: 280px;
     height:300px;
-    background: url('../assets/news-bg.jpg');
+    background: url('../assets/coloring3.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -120,7 +120,7 @@
   .container .news .news_box .coloring .file .img3{
     width: 280px;
     height:300px;
-    background: url('../assets/news-bg.jpg');
+    background: url('../assets/coloring-2.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
