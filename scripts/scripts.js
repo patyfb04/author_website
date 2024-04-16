@@ -231,6 +231,14 @@
         modal[0].style.display =  'block' ;
       });
     });
+
+    const bookHome = document.querySelectorAll('#home_book1');
+    bookHome.forEach(function(book) {
+      book.addEventListener('click', function(event){
+        mapModalFieldsMobile('book_tales');
+        modal[0].style.display =  'block' ;
+      });
+    });
   }
 
 
