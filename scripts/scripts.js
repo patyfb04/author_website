@@ -205,6 +205,14 @@
         modal[0].style.display =  'block' ;
       });
     });
+
+    const bookHome = document.querySelectorAll('#home_book');
+    bookHome.forEach(function(book) {
+      book.addEventListener('click', function(event){
+        mapModalFields('book_tales');
+        modal[0].style.display =  'block' ;
+      });
+    });
   }
 
   function toggleModalMobile(element){
