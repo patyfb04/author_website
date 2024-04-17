@@ -337,7 +337,6 @@ function assignFormsActions(isMobile) {
   }
 }
 
-
 function submitSignUp(event) {
   event.preventDefault();
 
@@ -357,28 +356,24 @@ function submitSignUp(event) {
       element.classList.add("required");
       span.innerHTML = "There are required fields missing.";
     } else {
-      const handleSubmit = (event) => {
-        event.preventDefault();
+      const myForm = event.target;
+      const formData = new FormData(myForm);
 
-        const myForm = event.target;
-        const formData = new FormData(myForm);
-
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => {
+          element.style.display = "block";
+          element.classList.remove("required");
+          span.innerHTML = "Your subscription was sent successfully!";
         })
-          .then(() => {
-            element.style.display = "block";
-            element.classList.remove("required");
-            span.innerHTML = "Your subscription was sent successfully!";
-          })
-          .catch((error) => {
-            element.style.display = "block";
-            element.classList.add("required");
-            span.innerHTML = "Error: your subscription was not sent.";
-          });
-      };
+        .catch((error) => {
+          element.style.display = "block";
+          element.classList.add("required");
+          span.innerHTML = "Error: your subscription was not sent.";
+        });
     }
   }
 }
@@ -387,7 +382,6 @@ function submitContactForm(event) {
   event.preventDefault();
 
   if (event.target.id.indexOf("signup") <= -1) {
-    
     const isMobile = window.innerWidth <= 1024;
     let nameField = isMobile ? "contact_name1" : "contact_name";
     let emailField = isMobile ? "contact_email1" : "contact_email";
@@ -407,28 +401,24 @@ function submitContactForm(event) {
       element.classList.add("required");
       span.innerHTML = "There are required fields missing.";
     } else {
-      const handleSubmit = (event) => {
-        event.preventDefault();
+      const myForm = event.target;
+      const formData = new FormData(myForm);
 
-        const myForm = event.target;
-        const formData = new FormData(myForm);
-
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => {
+          element.style.display = "block";
+          element.classList.remove("required");
+          span.innerHTML = "Your message was sent successfully!";
         })
-          .then(() => {
-            element.style.display = "block";
-            element.classList.remove("required");
-            span.innerHTML = "Your message was sent successfully!";
-          })
-          .catch((error) => {
-            element.style.display = "block";
-            element.classList.add("required");
-            span.innerHTML = "Error: your message was not sent.";
-          });
-      };
+        .catch((error) => {
+          element.style.display = "block";
+          element.classList.add("required");
+          span.innerHTML = "Error: your message was not sent.";
+        });
     }
   }
 }
