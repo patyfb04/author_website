@@ -181,7 +181,7 @@
                     method="POST"
                     netlify
                   >
-                    <input type="text" placeholder="email" id="signup_email" />
+                    <input type="text" placeholder="email" id="signup_email" name="signup_email" />
                     <button type="submit">Subscribe</button>
                   </form>
                 </div>
@@ -206,16 +206,15 @@
                 </div>
                 <div class="form">
                   <form id="contact_form" name="contact_form"   method="POST" netlify>
-                    <label for="name">Name:</label
-                    ><input type="text" placeholder="name" id="contact_name" />
-                    <label for="email">Email:</label
-                    ><input
+                    <label for="name">Name:</label><input type="text" placeholder="name" id="contact_name"   name="contact_name"/>
+                    <label for="email">Email:</label><input
                       type="text"
                       placeholder="email"
                       id="contact_email"
+                      name="contact_email"
                     />
                     <label for="message">Message:</label
-                    ><textarea id="contact_message"></textarea>
+                    ><textarea id="contact_message" name="contact_message"></textarea>
                     <button type="submit">Submit</button>
                   </form>
                 </div>
@@ -411,7 +410,7 @@
                 </div>
                 <div class="form">
                   <form id="signup_form1" name="signup_form1"   method="POST" netlify>
-                    <input type="text" placeholder="email" id="signup_email1" />
+                    <input type="text" placeholder="email" id="signup_email1" name="signup_email1" />
                     <button type="submit">Subscribe</button>
                   </form>
                 </div>
@@ -437,15 +436,16 @@
                 <div class="form">
                   <form id="contact_form1" name="contact_form1"  method="POST" netlify>
                     <label for="name1">Name:</label
-                    ><input type="text" placeholder="name" id="contact_name1" />
+                    ><input type="text" placeholder="name" id="contact_name1" name="contact_name1" />
                     <label for="email2">Email:</label
                     ><input
                       type="text"
                       placeholder="email"
                       id="contact_email1"
+                      name="contact_email1"
                     />
                     <label for="message3">Message:</label
-                    ><textarea id="contact_message1"></textarea>
+                    ><textarea id="contact_message1" name="contact_message1"></textarea>
                     <button type="submit">Submit</button>
                   </form>
                 </div>

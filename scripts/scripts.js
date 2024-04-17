@@ -359,6 +359,8 @@ function submitSignUp(event) {
       const myForm = event.target;
       const formData = new FormData(myForm);
 
+      console.log('FormData', formData);
+
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
