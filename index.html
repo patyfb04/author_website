@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="css/styles_books.css" />
     <link rel="stylesheet" href="css/styles_news.css" />
     <link rel="stylesheet" href="css/styles_contact.css" />
-    <script
-      src="./scripts/jquery.js"
-      type="text/javascript"
-    ></script>
+    <script src="./scripts/jquery.js" type="text/javascript"></script>
     <script
       src="scripts/scripts.js"
       language="JavaScript"
@@ -72,17 +69,31 @@
                 <div class="aboutbook">About the book</div>
                 <div class="title">Tales of the Forest - Vol. 1</div>
                 <div class="description">
-                  Embark on a whimsical journey through the enchanting Tales of the Forest, where 
-                  the secrets of the woodland come alive through the eyes of its most endearing inhabitants. <br/>
-                  In this delightful children's book, the forest's mystical charm is revealed through a collection 
-                  of short tales starring the lovable animals who call it home. <br/> From wise old owls to mischievous foxes, 
-                  each character brings their own unique story to life, captivating readers with heartwarming adventures and 
-                  valuable lessons along the way. <br/>Join the creatures of the forest as they navigate challenges, forge 
-                  friendships, and discover the true magic that dwells within nature's embrace. <br/><br/><b>Tales of the Forest</b> is 
-                  a charming and timeless read that will transport readers of all ages into a world where imagination reigns and the 
-                  wonders of the natural world await at every turn.
+                  Embark on a whimsical journey through the enchanting Tales of
+                  the Forest, where the secrets of the woodland come alive
+                  through the eyes of its most endearing inhabitants. <br />
+                  In this delightful children's book, the forest's mystical
+                  charm is revealed through a collection of short tales starring
+                  the lovable animals who call it home. <br />
+                  From wise old owls to mischievous foxes, each character brings
+                  their own unique story to life, captivating readers with
+                  heartwarming adventures and valuable lessons along the way.
+                  <br />Join the creatures of the forest as they navigate
+                  challenges, forge friendships, and discover the true magic
+                  that dwells within nature's embrace. <br /><br /><b
+                    >Tales of the Forest</b
+                  >
+                  is a charming and timeless read that will transport readers of
+                  all ages into a world where imagination reigns and the wonders
+                  of the natural world await at every turn.
                 </div>
-                <div class="button" (click)="toggleModal('book_tales')" id="home_book">Learn More</div>
+                <div
+                  class="button"
+                  (click)="toggleModal('book_tales')"
+                  id="home_book"
+                >
+                  Learn More
+                </div>
               </div>
             </div>
           </div>
@@ -93,17 +104,23 @@
                 <div class="about_title">About the author</div>
                 <div class="about_name">Patricia Braga</div>
                 <div class="description">
-                  Patricia Braga is a talented software engineer and illustrator born in Brazil and currently living in Canada. 
-                  With a passion for creativity and a knack for storytelling, she recently ventured into the world of writing where 
-                  she brings a unique perspective to her work.
-                  She initiated her path into children's books literature motivated by her childhood passion for children's books. 
+                  Patricia Braga is a talented software engineer and illustrator
+                  born in Brazil and currently living in Canada. With a passion
+                  for creativity and a knack for storytelling, she recently
+                  ventured into the world of writing where she brings a unique
+                  perspective to her work. She initiated her path into
+                  children's books literature motivated by her childhood passion
+                  for children's books.
 
-                  <br/><br/>Being a mom of 2 boys and having illustrated more than 15 children's books,
-                  she always had this public as a guide her when creating something, wheather is an illustration or a story. 
-                  Patricia's joyful spirit shines through in her writing and in her illustrations, captivating readers with her 
-                  imaginative plots and vibrant characters. 
-                  
-                  <br/><br/>Get ready to be swept away on a literary adventure with Patricia Braga as your guide!
+                  <br /><br />Being a mom of 2 boys and having illustrated more
+                  than 15 children's books, she always had this public as a
+                  guide her when creating something, wheather is an illustration
+                  or a story. Patricia's joyful spirit shines through in her
+                  writing and in her illustrations, captivating readers with her
+                  imaginative plots and vibrant characters.
+
+                  <br /><br />Get ready to be swept away on a literary adventure
+                  with Patricia Braga as your guide!
                 </div>
               </div>
             </div>
@@ -158,9 +175,14 @@
                   exclusive content.
                 </div>
                 <div class="form">
-                  <form id="signup_form">
+                  <form
+                    id="signup_form"
+                    name="signup_form"
+                    method="POST"
+                    netlify
+                  >
                     <input type="text" placeholder="email" id="signup_email" />
-                    <button onclick="submitSignUp(event)">Subscribe</button>
+                    <button type="submit">Subscribe</button>
                   </form>
                 </div>
                 <div class="signup_notification" id="signup_notification">
@@ -183,7 +205,7 @@
                   I would love to hear from you, please send me a message!
                 </div>
                 <div class="form">
-                  <form id="contact_form">
+                  <form id="contact_form" name="contact_form"   method="POST" netlify>
                     <label for="name">Name:</label
                     ><input type="text" placeholder="name" id="contact_name" />
                     <label for="email">Email:</label
@@ -194,7 +216,7 @@
                     />
                     <label for="message">Message:</label
                     ><textarea id="contact_message"></textarea>
-                    <button onclick="submitContactForm(event)">Submit</button>
+                    <button type="submit">Submit</button>
                   </form>
                 </div>
                 <div class="contact_notification" id="contact_notification">
@@ -208,7 +230,12 @@
                 </div>
               </div>
             </div>
-            <div class="copyright"><h5>© 2024  All rights reserved | Website built and designed by Patricia Braga</h5></div>
+            <div class="copyright">
+              <h5>
+                © 2024 All rights reserved | Website built and designed by
+                Patricia Braga
+              </h5>
+            </div>
           </div>
         </div>
       </div>
@@ -277,17 +304,31 @@
                 <div class="aboutbook">About the book</div>
                 <div class="title">Tales of the Forest - Vol. 1</div>
                 <div class="description">
-                  Embark on a whimsical journey through the enchanting Tales of the Forest, where 
-                  the secrets of the woodland come alive through the eyes of its most endearing inhabitants. <br/>
-                  In this delightful children's book, the forest's mystical charm is revealed through a collection 
-                  of short tales starring the lovable animals who call it home. <br/> From wise old owls to mischievous foxes, 
-                  each character brings their own unique story to life, captivating readers with heartwarming adventures and 
-                  valuable lessons along the way. <br/>Join the creatures of the forest as they navigate challenges, forge 
-                  friendships, and discover the true magic that dwells within nature's embrace. <br/><br/><b>Tales of the Forest</b> is 
-                  a charming and timeless read that will transport readers of all ages into a world where imagination reigns and the 
-                  wonders of the natural world await at every turn.
+                  Embark on a whimsical journey through the enchanting Tales of
+                  the Forest, where the secrets of the woodland come alive
+                  through the eyes of its most endearing inhabitants. <br />
+                  In this delightful children's book, the forest's mystical
+                  charm is revealed through a collection of short tales starring
+                  the lovable animals who call it home. <br />
+                  From wise old owls to mischievous foxes, each character brings
+                  their own unique story to life, captivating readers with
+                  heartwarming adventures and valuable lessons along the way.
+                  <br />Join the creatures of the forest as they navigate
+                  challenges, forge friendships, and discover the true magic
+                  that dwells within nature's embrace. <br /><br /><b
+                    >Tales of the Forest</b
+                  >
+                  is a charming and timeless read that will transport readers of
+                  all ages into a world where imagination reigns and the wonders
+                  of the natural world await at every turn.
                 </div>
-                <div class="button"   (click)="toggleModalMobile('book_tales1')" id="home_book1">Learn More</div>
+                <div
+                  class="button"
+                  (click)="toggleModalMobile('book_tales1')"
+                  id="home_book1"
+                >
+                  Learn More
+                </div>
               </div>
             </div>
           </div>
@@ -298,17 +339,23 @@
                 <div class="about_title">About the author</div>
                 <div class="about_name">Patricia Braga</div>
                 <div class="description">
-                  Patricia Braga is a talented software engineer and illustrator born in Brazil and currently living in Canada. 
-                  With a passion for creativity and a knack for storytelling, she recently ventured into the world of writing where 
-                  she brings a unique perspective to her work.
-                  She initiated her path into children's books literature motivated by her childhood passion for children's books. 
+                  Patricia Braga is a talented software engineer and illustrator
+                  born in Brazil and currently living in Canada. With a passion
+                  for creativity and a knack for storytelling, she recently
+                  ventured into the world of writing where she brings a unique
+                  perspective to her work. She initiated her path into
+                  children's books literature motivated by her childhood passion
+                  for children's books.
 
-                  <br/><br/>Being a mom of 2 boys and having illustrated more than 15 children's books,
-                  she always had this public as a guide her when creating something, wheather is an illustration or a story. 
-                  Patricia's joyful spirit shines through in her writing and in her illustrations, captivating readers with her 
-                  imaginative plots and vibrant characters. 
-                  
-                  <br/><br/>Get ready to be swept away on a literary adventure with Patricia Braga as your guide!
+                  <br /><br />Being a mom of 2 boys and having illustrated more
+                  than 15 children's books, she always had this public as a
+                  guide her when creating something, wheather is an illustration
+                  or a story. Patricia's joyful spirit shines through in her
+                  writing and in her illustrations, captivating readers with her
+                  imaginative plots and vibrant characters.
+
+                  <br /><br />Get ready to be swept away on a literary adventure
+                  with Patricia Braga as your guide!
                 </div>
               </div>
             </div>
@@ -363,9 +410,9 @@
                   exclusive content.
                 </div>
                 <div class="form">
-                  <form id="signup_form1">
+                  <form id="signup_form1" name="signup_form1"   method="POST" netlify>
                     <input type="text" placeholder="email" id="signup_email1" />
-                    <button onclick="submitSignUp(event)">Subscribe</button>
+                    <button type="submit">Subscribe</button>
                   </form>
                 </div>
                 <div class="signup_notification" id="signup_notification1">
@@ -383,27 +430,36 @@
           <div class="contact" id="contact1_content">
             <div class="contact_box">
               <div class="contact_form">
-                <div class="title">
-                  GET IN TOUCH
-                </div>
+                <div class="title">GET IN TOUCH</div>
                 <div class="subtitle">
                   I would love to hear from you, please send me a message!
                 </div>
                 <div class="form">
-                    <form id="contact_form1">
-                      <label for="name1">Name:</label><input type="text" placeholder="name" id="contact_name1">
-                      <label for="email2">Email:</label><input type="text" placeholder="email" id="contact_email1">
-                      <label for="message3">Message:</label><textarea id="contact_message1"></textarea>
-                      <button onclick="submitContactForm(event)"> Submit</button>
-                    </form>
+                  <form id="contact_form1" name="contact_form1"  method="POST" netlify>
+                    <label for="name1">Name:</label
+                    ><input type="text" placeholder="name" id="contact_name1" />
+                    <label for="email2">Email:</label
+                    ><input
+                      type="text"
+                      placeholder="email"
+                      id="contact_email1"
+                    />
+                    <label for="message3">Message:</label
+                    ><textarea id="contact_message1"></textarea>
+                    <button type="submit">Submit</button>
+                  </form>
                 </div>
                 <div class="contact_notification" id="contact_notification1">
-                  <div (click)="closeNotification('contact_notification1')" class="close"><img src="/assets/cancel.svg"/></div>
+                  <div
+                    (click)="closeNotification('contact_notification1')"
+                    class="close"
+                  >
+                    <img src="/assets/cancel.svg" />
+                  </div>
                   <span>Your message was sent successfully!</span>
                 </div>
               </div>
-          </div>
-
+            </div>
           </div>
         </div>
       </div>
