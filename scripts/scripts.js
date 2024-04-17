@@ -296,7 +296,14 @@ function mapModalFieldsMobile(id) {
     )[0];
     title.innerHTML = book[0].title;
     description.innerHTML = book[0].short_description;
-    button.setAttribute("href", book[0].link);
+
+    if(book[0].link == "soon"){
+      button.innerHTML ="Soon Available";
+    } else{
+      button.innerHTML ="Buy the Book";
+      button.setAttribute("href", book[0].link);
+    }
+
     img.style.backgroundImage = "url('" + book[0].img + "')";
   }
 }
