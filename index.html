@@ -181,8 +181,32 @@
                     method="POST"
                     netlify
                   >
-                    <input type="text" placeholder="email" id="signup_email" name="signup_email" />
-                    <button type="submit">Subscribe</button>
+                    <div class="table">
+                      <div>
+                        <div>
+                          <input
+                            type="text"
+                            placeholder="email"
+                            id="signup_email"
+                            name="signup_email"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <div>
+                          <div id="captcha"></div>
+                        </div>
+                        <div>
+                          <input
+                            type="text"
+                            placeholder="Captcha"
+                            id="captchaTextBox"
+                          /> 
+                          <button type="submit">Subscribe</button>
+                        </div>
+                       
+                      </div>
+                    </div>
                   </form>
                 </div>
                 <div class="signup_notification" id="signup_notification">
@@ -205,16 +229,38 @@
                   I would love to hear from you, please send me a message!
                 </div>
                 <div class="form">
-                  <form id="contact_form" name="contact_form"   method="POST" netlify>
-                    <label for="name">Name:</label><input type="text" placeholder="name" id="contact_name"   name="contact_name"/>
-                    <label for="email">Email:</label><input
+                  <form
+                    id="contact_form"
+                    name="contact_form"
+                    method="POST"
+                    netlify
+                  >
+                    <label for="name">Name:</label
+                    ><input
+                      type="text"
+                      placeholder="name"
+                      id="contact_name"
+                      name="contact_name"
+                    />
+                    <label for="email">Email:</label
+                    ><input
                       type="text"
                       placeholder="email"
                       id="contact_email"
                       name="contact_email"
                     />
                     <label for="message">Message:</label
-                    ><textarea id="contact_message" name="contact_message"></textarea>
+                    ><textarea
+                      id="contact_message"
+                      name="contact_message"
+                    ></textarea>
+
+                    <div id="captcha1"></div>
+                    <input
+                            type="text"
+                            placeholder="Captcha"
+                            id="captchaTextBox1"
+                          /> 
                     <button type="submit">Submit</button>
                   </form>
                 </div>
@@ -409,8 +455,18 @@
                   exclusive content.
                 </div>
                 <div class="form">
-                  <form id="signup_form1" name="signup_form1"   method="POST" netlify>
-                    <input type="text" placeholder="email" id="signup_email1" name="signup_email1" />
+                  <form
+                    id="signup_form1"
+                    name="signup_form1"
+                    method="POST"
+                    netlify
+                  >
+                    <input
+                      type="text"
+                      placeholder="email"
+                      id="signup_email1"
+                      name="signup_email1"
+                    />
                     <button type="submit">Subscribe</button>
                   </form>
                 </div>
@@ -434,9 +490,19 @@
                   I would love to hear from you, please send me a message!
                 </div>
                 <div class="form">
-                  <form id="contact_form1" name="contact_form1"  method="POST" netlify>
+                  <form
+                    id="contact_form1"
+                    name="contact_form1"
+                    method="POST"
+                    netlify
+                  >
                     <label for="name1">Name:</label
-                    ><input type="text" placeholder="name" id="contact_name1" name="contact_name1" />
+                    ><input
+                      type="text"
+                      placeholder="name"
+                      id="contact_name1"
+                      name="contact_name1"
+                    />
                     <label for="email2">Email:</label
                     ><input
                       type="text"
@@ -445,7 +511,10 @@
                       name="contact_email1"
                     />
                     <label for="message3">Message:</label
-                    ><textarea id="contact_message1" name="contact_message1"></textarea>
+                    ><textarea
+                      id="contact_message1"
+                      name="contact_message1"
+                    ></textarea>
                     <button type="submit">Submit</button>
                   </form>
                 </div>

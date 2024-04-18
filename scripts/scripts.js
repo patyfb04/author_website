@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
   addHoverEffectToContact();
   notificationsDisplayNone(isMobile);
   addFormsNotificationClick(isMobile);
+  displayCaptchas(true);
+  createCaptcha('captcha');
+  createCaptcha('captcha1');
 
   if (!isMobile) {
     toggleModal();
@@ -352,7 +355,6 @@ function assignFormsActions(isMobile) {
 
 function submitSignUp(event) {
   event.preventDefault();
-
   if (event.target.id.indexOf("signup") > -1) {
     const isMobile = window.innerWidth <= 1024;
 
@@ -372,23 +374,32 @@ function submitSignUp(event) {
       const myForm = event.target;
       const formData = new FormData(myForm);
 
-      console.log('FormData', formData);
-
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
-      })
-        .then(() => {
-          element.style.display = "block";
-          element.classList.remove("required");
-          span.innerHTML = "Your subscription was sent successfully!";
+      let valid = validateCaptcha(event, 'captchaTextBox');
+      if(valid){
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
         })
-        .catch((error) => {
-          element.style.display = "block";
-          element.classList.add("required");
-          span.innerHTML = "Error: your subscription was not sent.";
-        });
+          .then(() => {
+            element.style.display = "block";
+            element.classList.remove("required");
+            span.innerHTML = "Your subscription was sent successfully!";
+          })
+          .catch((error) => {
+            element.style.display = "block";
+            element.classList.add("required");
+            span.innerHTML = "Error: your subscription was not sent.";
+          });
+      }
+      else{
+        displayCaptchas(true);
+        createCaptcha('captcha');
+        element.style.display = "block";
+        element.classList.add("required");
+        span.innerHTML = "Error: your subscription was not sent.";
+      }
+     
     }
   }
 }
@@ -416,24 +427,36 @@ function submitContactForm(event) {
       element.classList.add("required");
       span.innerHTML = "There are required fields missing.";
     } else {
-      const myForm = event.target;
-      const formData = new FormData(myForm);
 
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
-      })
-        .then(() => {
-          element.style.display = "block";
-          element.classList.remove("required");
-          span.innerHTML = "Your message was sent successfully!";
+      let valid = validateCaptcha(event, 'captchaTextBox1');
+      if(valid) {
+        const myForm = event.target;
+        const formData = new FormData(myForm);
+  
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
         })
-        .catch((error) => {
-          element.style.display = "block";
-          element.classList.add("required");
-          span.innerHTML = "Error: your message was not sent.";
-        });
+          .then(() => {
+            element.style.display = "block";
+            element.classList.remove("required");
+            span.innerHTML = "Your message was sent successfully!";
+          })
+          .catch((error) => {
+            element.style.display = "block";
+            element.classList.add("required");
+            span.innerHTML = "Error: your message was not sent.";
+          });
+      }
+      else {
+        displayCaptchas(true);
+        createCaptcha('captcha1');
+        element.style.display = "block";
+        element.classList.add("required");
+        span.innerHTML = "Error: your message was not sent.";
+      }
+      
     }
   }
 }
@@ -618,3 +641,54 @@ LeafScene.prototype.render = function () {
 
   requestAnimationFrame(this.render.bind(this));
 };
+
+/**************************************CAPTCHA ************************************* */
+function displayCaptchas(display){
+  const isMobile = window.innerWidth <= 1024;
+  if(isMobile){
+
+  } else{
+    document.getElementById('captcha').style.display = !display ? "none" : "block";
+    document.getElementById('captchaTextBox').style.display =  !display ? "none" : "block";
+    document.getElementById('captcha1').style.display = !display ? "none" : "inline-block";
+   // document.getElementById('captchaTextBox1').style.display =  !display ? "none" : "inline-block";
+  }
+}
+
+var code;
+function createCaptcha(canvaId) {
+  //clear the contents of captcha div first 
+  document.getElementById(canvaId).innerHTML = "";
+  var charsArray =
+  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*";
+  var lengthOtp = 6;
+  var captcha = [];
+  for (var i = 0; i < lengthOtp; i++) {
+    //below code will not allow Repetition of Characters
+    var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array
+    if (captcha.indexOf(charsArray[index]) == -1)
+      captcha.push(charsArray[index]);
+    else i--;
+  }
+  var canv = document.createElement("canvas");
+  canv.id = canvaId;
+  canv.width = 100;
+  canv.height = 50;
+  var ctx = canv.getContext("2d");
+  ctx.font = "25px Georgia";
+  ctx.strokeText(captcha.join(""), 0, 30);
+  //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+  code = captcha.join("");
+  document.getElementById(canvaId).appendChild(canv); // adds the canvas to the body element
+}
+
+function validateCaptcha(event, inputId) {
+  event.preventDefault();
+  if (document.getElementById(inputId).value == code) {
+    alert("Valid Captcha");
+    return true;
+  }else{
+    alert("Invalid Captcha. try Again");
+    return false;
+  }
+}
