@@ -20,8 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
   notificationsDisplayNone(isMobile);
   addFormsNotificationClick(isMobile);
   displayCaptchas(true);
-  createCaptcha('captcha');
-  createCaptcha('captcha1');
+
+  createCaptcha('captchaSignUpDesktop'); // signup
+  createCaptcha('captchaContactDesktop'); // contact
+  createCaptcha('captchaSignUpMobile'); // signup Mob
+  createCaptcha('captchaContactMobile'); // contact Mob
 
   if (!isMobile) {
     toggleModal();
@@ -374,7 +377,7 @@ function submitSignUp(event) {
       const myForm = event.target;
       const formData = new FormData(myForm);
 
-      let valid = validateCaptcha(event, 'captchaTextBox');
+      let valid = validateCaptcha(event, isMobile ? 'captchaTextBoxSignUpMobile': 'captchaTextBoxSignUpDesktop');
       if(valid){
         fetch("/", {
           method: "POST",
@@ -394,7 +397,7 @@ function submitSignUp(event) {
       }
       else{
         displayCaptchas(true);
-        createCaptcha('captcha');
+        createCaptcha(isMobile ? 'captchaSignUpMobile': 'captchaSignUpDesktop');
         element.style.display = "block";
         element.classList.add("required");
         span.innerHTML = "Error: your subscription was not sent.";
@@ -428,7 +431,7 @@ function submitContactForm(event) {
       span.innerHTML = "There are required fields missing.";
     } else {
 
-      let valid = validateCaptcha(event, 'captchaTextBox1');
+      let valid = validateCaptcha(event,  isMobile ? 'captchaTextBoxContactMobile' : 'captchaTextBoxContactDesktop');
       if(valid) {
         const myForm = event.target;
         const formData = new FormData(myForm);
@@ -451,7 +454,7 @@ function submitContactForm(event) {
       }
       else {
         displayCaptchas(true);
-        createCaptcha('captcha1');
+        createCaptcha( isMobile ? 'captchaContactMobile' : 'captchaContactDesktop');
         element.style.display = "block";
         element.classList.add("required");
         span.innerHTML = "Error: your message was not sent.";
@@ -646,12 +649,15 @@ LeafScene.prototype.render = function () {
 function displayCaptchas(display){
   const isMobile = window.innerWidth <= 1024;
   if(isMobile){
-
+    document.getElementById('captchaSignUpMobile').style.display = !display ? "none" : "block";
+    document.getElementById('captchaTextBoxSignUpMobile').style.display =  !display ? "none" : "block";
+    document.getElementById('captchaContactMobile').style.display = !display ? "none" : "inline-block"; //contact
+    document.getElementById('captchaTextBoxContactMobile').style.display =  !display ? "none" : "inline-block"; //contact
   } else{
-    document.getElementById('captcha').style.display = !display ? "none" : "block";
-    document.getElementById('captchaTextBox').style.display =  !display ? "none" : "block";
-    document.getElementById('captcha1').style.display = !display ? "none" : "inline-block";
-   // document.getElementById('captchaTextBox1').style.display =  !display ? "none" : "inline-block";
+    document.getElementById('captchaSignUpDesktop').style.display = !display ? "none" : "block";
+    document.getElementById('captchaTextBoxSignUpDesktop').style.display =  !display ? "none" : "block";
+    document.getElementById('captchaContactDesktop').style.display = !display ? "none" : "inline-block"; //contact
+    document.getElementById('captchaTextBoxContactDesktop').style.display =  !display ? "none" : "inline-block"; //contact
   }
 }
 
@@ -688,7 +694,7 @@ function validateCaptcha(event, inputId) {
     alert("Valid Captcha");
     return true;
   }else{
-    alert("Invalid Captcha. try Again");
+    alert("Invalid Captcha. try Again =>" + document.getElementById(inputId).value + " => " + code);
     return false;
   }
 }

@@ -173,11 +173,22 @@
   font-size: 11px;
 }
 
-#captchaTextBox1{
+#captchaTextBoxContactDesktop{
   width: 70%;
   float: right;
 }
   @media only screen and (max-width: 700px){
+
+    .container .contact .contact_box .contact_form form{
+      margin-top: 50px;
+    }
+    .container .contact .contact_box .contact_form{
+      height: 480px;
+    }
+
+    .container .contact .contact_box .contact_form .contact_notification {
+      margin-top:230px;
+    }
 
     .container .contact .contact_box .contact_form,
     .container .contact .contact_box .contact_form .form input,
@@ -192,5 +203,14 @@
   }
   
   @media only screen and (min-width: 700px)  and  (max-width: 1024px){
+    .container .contact .contact_box .contact_form form{
+      margin-top: 0px;
+    }
+    .container .contact .contact_box .contact_form{
+      height: 480px;
+    }
 
+    .container .contact .contact_box .contact_form .contact_notification {
+      margin-top:210px;
+    }
   }
