@@ -400,7 +400,7 @@ function submitSignUp(event) {
         createCaptcha(isMobile ? 'captchaSignUpMobile': 'captchaSignUpDesktop');
         element.style.display = "block";
         element.classList.add("required");
-        span.innerHTML = "Error: your subscription was not sent.";
+        span.innerHTML = "Error:Invalid Captcha.";
       }
      
     }
@@ -457,7 +457,7 @@ function submitContactForm(event) {
         createCaptcha( isMobile ? 'captchaContactMobile' : 'captchaContactDesktop');
         element.style.display = "block";
         element.classList.add("required");
-        span.innerHTML = "Error: your message was not sent.";
+        span.innerHTML = "Error: Invalid Captcha.";
       }
       
     }
@@ -691,10 +691,8 @@ function createCaptcha(canvaId) {
 function validateCaptcha(event, inputId) {
   event.preventDefault();
   if (document.getElementById(inputId).value == code) {
-    alert("Valid Captcha");
     return true;
   }else{
-    alert("Invalid Captcha. try Again =>" + document.getElementById(inputId).value + " => " + code);
     return false;
   }
 }
